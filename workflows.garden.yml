@@ -1,0 +1,12 @@
+kind: Workflow
+name: cpt-workflow
+steps:
+  - script: |
+      echo "Starting performance testing with Apache Bench..."
+  - command:
+      - run
+      - task
+      - run-load-test
+  - script: |
+      echo "Finished testing"
+

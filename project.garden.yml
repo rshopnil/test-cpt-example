@@ -1,0 +1,20 @@
+kind: Project
+name: garden-demo
+defaultEnvironment: local
+
+variables:
+  replicas: 3
+
+environments:
+  - name: local
+    defaultNamespace: demo
+    variables:
+      replicas: 1
+      hostname: garden-demo.127.0.0.1.nip.io
+  - name: default
+    defaultNamespace: demo
+
+providers:
+  - name: local-kubernetes
+    environments:
+      - local
